@@ -1,0 +1,108 @@
+\documentclass{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,latexsym}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\title{All bases for acyclic affine cluster algebras consist of generalized minors}
+
+\author{Dylan Rupel}
+\author{Salvatore Stella}
+
+\begin{document}
+  \begin{abstract}
+    We prove what the title says.
+    Along the way we show that all cluster monomials for \emph{every} acyclic cluster algebra are computable as generalized minors.
+  \end{abstract}
+  \maketitle
+
+  \section{Affine Roots Systems}
+    \begin{theorem}
+      Characterizations of $\delta$
+    \end{theorem}
+
+  \section{Acyclic Cluster Algebras}
+    \begin{theorem}
+      $\bfg$-vectors from $\bfd$-vectors
+    \end{theorem}
+ 
+    \begin{definition}
+      dominance order on $\bfg$-vectors
+    \end{definition}
+
+  \section{Level Zero Minors}
+    \subsection{Level Zero Representations}
+    \begin{definition}
+      Chari-Pressley level zero representations
+    \end{definition}
+
+    \begin{theorem}
+      explicit type-by-type analysis of how to construct the minor corresponding to the generic basis element $x_{\delta}^n$
+    \end{theorem}
+
+    \begin{theorem}
+      \mbox{}
+      \begin{enumerate}
+        \item only a single step is possible in the $\theta$ direction for finite-type representations found above
+        \item this can also be achieved uniquely by walking along the chosen coxeter element
+      \end{enumerate}
+    \end{theorem}
+
+  \section{Coxeter Double Bruhat Cells}
+    \begin{theorem}
+      cluster structure on $G^{c,c^{-1}}$
+    \end{theorem}
+
+    \begin{proposition}
+      \cite[Prop. 2.2]{rsw19}
+      Any double reduced word produces a factorization of a generic element of $G^{c,c^{-1}}$.
+    \end{proposition}
+    
+    Define the following elements of $G$:
+    \begin{align}
+      \label{eq:generic factorizations}
+      g_k:=&x_{\ol{1}}(r_{\ol{1}}^{(k)}) x_{\ol{2}}(r_{\ol{2}}^{(k)}) \cdots x_{\ol{n-k}}(r_{\ol{n-k}}^{(k)}) x_n(r_n^{(k)}) x_{n-1}(r_{n-1}^{(k)}) \cdots x_{n-k+1}(r_{n-k+1}^{(k)})\times\\
+      \nonumber & \quad \times x_{\ol{n-k+1}}(r_{\ol{n-k+1}}^{(k)}) \cdots x_{\ol{n-1}}(r_{\ol{n-1}}^{(k)}) x_{\ol{n}}(r_{\ol{n}}^{(k)}) x_{n-k}(r_{n-k}^{(k)}) \cdots x_2(r_2^{(k)}) x_1(r_1^{(k)}) h_k.
+    \end{align}
+    We use these elements to understand the minors appearing along the sequence of seeds
+    \[t_0 \stackrel{n}{\longleftrightarrow} t_{-1} \stackrel{n-1}{\longleftrightarrow} t_{-2} \stackrel{n-2}{\longleftrightarrow} \cdots \stackrel{1}{\longleftrightarrow} t_{-n}.\]
+    \begin{lemma}
+      Transformation formulas among the $r_j^{(k)}$, $r_{\ol{j}}^{(k)}$, and $h_k$ for varying $k$.
+    \end{lemma}
+    \begin{proof}
+      For $i<n-k+1$, we have
+      \[\Delta_{\omega_i}(g_k)=h_k^{\omega_i}.\]
+      For $i=n-k+1$, we have
+      \[\Delta_{\omega_{n-k+1}}(g_k)=h_k^{\omega_{n-k+1}}\big(1+r_{n-k+1}^{(k)}r_{\ol{n-k+1}}^{(k)}\big).\]
+      For $i>n-k+1$ we have
+      \[\Delta_{\omega_i}(g_k)=h_k^{\omega_i}\big(1+r_i^{(k)}r_{\ol{i}}^{(k)}(\cdots)\big).\]
+      The $(\cdots)$ depends on the root system, I'm not sure the best way to write it down.
+    \end{proof}
+
+    \begin{lemma}
+      $\hat y_i^{(0)}=r_i^{(0)} r_{\ol{i}}^{(0)}$\\
+      $\hat y_i^{(k)}=r_i^{(k)} r_{\ol{i}}^{(k)}$??\\
+    \end{lemma}
+    \begin{theorem}
+      Every generalized minor is pointed on $G^{c,c^{-1}}$.
+    \end{theorem}
+    \begin{proof}
+      Refactor the generic element 
+      \[x_{\ol{1}}(t_{\ol{1}})\cdots x_{\ol{n}}(t_{\ol{n}})h x_n(t_n)\cdots x_1(t_1)\]
+      as
+      \[x_{\ol{1}}(t_{\ol{1}})\cdots x_{\ol{n}}(t_{\ol{n}}) x_n(t_nh^{?})\cdots x_1(t_1h^{?}) h.\]
+      Then it is essentially obvious by thinking about walking the representation.
+    \end{proof}
+
+  \begin{thebibliography}{XXX}
+    \bibitem[Qin]{qin} Fan Qin, ``Bases for upper cluster algebras and tropical points''
+    \bibitem[RSW19]{rsw19} Dylan Rupel, Salvatore Stella, Harold Williams: ``Affine cluster monomials are generalized minors.'' Compositio Math. 155 (2019) 1301-1326. 
+  \end{thebibliography}
+\end{document}
