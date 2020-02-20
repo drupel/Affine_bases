@@ -35,7 +35,7 @@
   \section{Cluster Algebras}
     Let $B_0=(b_{ij})$ denote an $n\times n$ skew-symmetrizable matrix with skew-symmetrizing matrix $D=\diag(d_1,\ldots,d_n)$, i.e. $DB_0$ is skew-symmetric.
     Define the \emph{mutation} of $B_0$ in direction $k$ by $\mu_k B_0:=(b'_{ij})$ for
-    \[b'_{ij}=\begin{cases} -b_{ij} & \text{if $i=k$ or $j=k$;}\\ b_{ij}+b_{ik}[b_{kj}]_++[-b_{ik}]_+b_{kj} & \text{otherwise;}\end{cases}\]
+    \[b'_{ij}=\begin{cases} -b_{ij} & \text{if $i=k$ or $j=k$;}\\ b_{ij}+[b_{ik}]_+b_{kj}+b_{ik}[-b_{kj}]_+ & \text{otherwise;}\end{cases}\]
     where we used the notation $[b]_+=\max(b,0)$.
     An easy calculation shows that $D\mu_k B_0$ is again skew-symmetric and that $\mu_k \mu_k B_0 = B_0$.
 
@@ -47,7 +47,7 @@
     \end{itemize}
 
     Alongside the matrix mutations, we consider for each $B_t=(b^{(t)}_{ij})$ transformations $\phi_{t,k}$ of the integer lattice $\ZZ^n$ given on $g=(g_i)$ by $\phi_{t,k}(g)=(g'_i)$ for
-    \[g'_i=\begin{cases} -g_k & \text{if $i=k$;}\\ g_i+b^{(t)}_{ik}[g_k]_++[-b^{(t)}_{ik}]_+g_k & \text{otherwise.}\end{cases}\]
+    \[g'_i=\begin{cases} -g_k & \text{if $i=k$;}\\ g_i+[b^{(t)}_{ik}]g_k+b^{(t)}_{ik}[-g_k]_+ & \text{otherwise.}\end{cases}\]
     Given a pair of vertices $t,t'\in\TT_n$ joined together by mutations in directions $k_1,k_2,\ldots,k_r$ through vertices $t=:t_1,t_2,\ldots,t_{r+1}:=t'$ we define the composite transformation of $\ZZ^n$ given by
     \[\phi_{t',t}:= \phi_{t_r,k_r}\cdots \phi_{t_2,k_2}\phi_{t_1,k_1}.\]
 
